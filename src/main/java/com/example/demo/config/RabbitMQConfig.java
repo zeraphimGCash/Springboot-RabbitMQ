@@ -19,7 +19,7 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue testqQueue() {
-        return new Queue("testq", true);
+        return new Queue("test", true);
     }
 
     @Bean
@@ -28,7 +28,7 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    Binding testeBinding(Queue testeQueue, DirectExchange exchange) {
-        return BindingBuilder.bind(testeQueue).to(exchange).with("routing-key-testq");
+    Binding testqBinding(Queue testeQueue, DirectExchange exchange) {
+        return BindingBuilder.bind(testeQueue).to(exchange).with("routing-key-test");
     }
 }
